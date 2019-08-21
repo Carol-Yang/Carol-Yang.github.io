@@ -30,7 +30,7 @@
     exturl: false,
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
     copycode: {"enable":false,"show_result":false,"style":null},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    back2top: {"enable":false,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: false,
     mediumzoom: false,
@@ -309,20 +309,20 @@
 </ul>
 <p><a href="https://hexo.io/zh-tw/index.html" target="_blank" rel="noopener">Hexo 官方網站</a> 也提供了詳細的教學，建議去看。</p>
 <h2 id="開始安裝-Hexo"><a href="#開始安裝-Hexo" class="headerlink" title="開始安裝 Hexo"></a>開始安裝 Hexo</h2><p>在電腦中安裝 Hexo (全局安裝)<br>輸入以下指令</p>
-<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install -g hexo-cli</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
 
 <h2 id="利用-Hexo-建立你的-blog"><a href="#利用-Hexo-建立你的-blog" class="headerlink" title="利用 Hexo 建立你的 blog"></a>利用 Hexo 建立你的 blog</h2><p>安裝完 Hexo 後，接下來就是建立自己的 blog 了~</p>
 <ol>
 <li><p>初始化 blog</p>
-<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo init carolblog</span></span><br><span class="line">// carolbog 為自己的部落格名，可自行修改</span><br></pre></td></tr></table></figure>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hexo init carolblog</span><br><span class="line">// carolbog 為自己的部落格名，可自行修改</span><br></pre></td></tr></table></figure>
 
 <p>輸入後，會建立一個以 carolblog 為名的資料夾</p>
 </li>
 <li><p>進入 blog 資料夾</p>
-<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> carolbog</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> cd carolbog</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>安裝相關套件</p>
-<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> npm install</span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
@@ -532,10 +532,6 @@
     </footer>
 
     
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
 
   </div>
 
