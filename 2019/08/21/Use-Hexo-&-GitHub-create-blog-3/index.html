@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.3.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '複製',
+      copy_success: '複製成功',
+      copy_failure: '複製失敗'
+    }
+  };
+</script>
+
+  <meta name="keywords" content="30 天 blog 挑戰,Hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="利用 Hexo + GitHub 建立部落格 (三)">
+<meta property="og:url" content="http://Carol-Yang.github.io/2019/08/21/Use-Hexo-&-GitHub-create-blog-3/index.html">
+<meta property="og:site_name" content="Carol murmur">
+<meta property="og:locale" content="zh-TW">
+<meta property="og:image" content="http://carol-yang.github.io/2019/08/21/Use-Hexo-&-GitHub-create-blog-3/hexo-config.png">
+<meta property="og:updated_time" content="2019-08-21T06:36:59.116Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="利用 Hexo + GitHub 建立部落格 (三)">
+<meta name="twitter:image" content="http://carol-yang.github.io/2019/08/21/Use-Hexo-&-GitHub-create-blog-3/hexo-config.png">
+  <link rel="canonical" href="http://Carol-Yang.github.io/2019/08/21/Use-Hexo-&-GitHub-create-blog-3/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>利用 Hexo + GitHub 建立部落格 (三) | Carol murmur</title>
+  <meta name="generator" content="Hexo 3.9.0">
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-TW">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Carol murmur</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切換導航欄">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首頁</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-about">
+      
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>關於</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>標籤</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分類</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>歸檔</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content page-post-detail">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://Carol-Yang.github.io/2019/08/21/Use-Hexo-&-GitHub-create-blog-3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Carol Yang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Carol murmur">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">利用 Hexo + GitHub 建立部落格 (三)
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              
+                
+              
+
+              <time title="創建時間：2019-08-21 14:36:59" itemprop="dateCreated datePublished" datetime="2019-08-21T14:36:59+08:00">2019-08-21</time>
+            </span>
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <img src="/2019/08/21/Use-Hexo-&-GitHub-create-blog-3/hexo-config.png" title="hexo-config">
+
+<a id="more"></a>
+
+<p>昨天講解完了 Hexo 的 _config.yml 配置文件，今天來另外說明其中幾個配置~<br>這些設定在一剛開始建立 Hexo blog 時，都是非必要的選項，可以跳過。</p>
+<blockquote>
+<p>重點是建立部落格後要持續寫文章!!!!</p>
+</blockquote>
+<h2 id="一、文章連結設置"><a href="#一、文章連結設置" class="headerlink" title="一、文章連結設置"></a>一、文章連結設置</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:title/</span>       <span class="comment"># 文章永久連結模式</span></span><br><span class="line"><span class="attr">permalink_defaults:</span>                        <span class="comment"># 自訂 permalink</span></span><br></pre></td></tr></table></figure>
+
+<p>permalink 可以設置文章的永久連結，以下是設置的一些範例</p>
+<table>
+<thead>
+<tr>
+<th>permalink 設置</th>
+<th>顯示</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>:year/:month/:day/:title/</td>
+<td><a href="https://carolblog.github.io/2018/08/21/hello-world" target="_blank" rel="noopener">https://carolblog.github.io/2018/08/21/hello-world</a></td>
+</tr>
+<tr>
+<td>:year-:month-:day-:title.html</td>
+<td><a href="https://carolblog.github.io/2018-08-21-hello-world.html" target="_blank" rel="noopener">https://carolblog.github.io/2018-08-21-hello-world.html</a></td>
+</tr>
+<tr>
+<td>:category/:title</td>
+<td><a href="https://carolblog.github.io/begin/hello-world" target="_blank" rel="noopener">https://carolblog.github.io/begin/hello-world</a></td>
+</tr>
+</tbody></table>
+<h3 id="變數"><a href="#變數" class="headerlink" title="變數"></a>變數</h3><p>permalink 中可使用預設的變數有</p>
+<table>
+<thead>
+<tr>
+<th>變數</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>:year</td>
+<td>文章的發表年份（4 位數）</td>
+</tr>
+<tr>
+<td>:month</td>
+<td>文章的發表月份（2 位數）</td>
+</tr>
+<tr>
+<td>:i_month</td>
+<td>文章的發表月份（去掉開頭的 0）</td>
+</tr>
+<tr>
+<td>:day</td>
+<td>文章的發表日期 (2 位數)</td>
+</tr>
+<tr>
+<td>:i_day</td>
+<td>文章的發表日期（去掉開頭的 0）</td>
+</tr>
+<tr>
+<td>:title</td>
+<td>文章名稱</td>
+</tr>
+<tr>
+<td>:id</td>
+<td>文章 ID</td>
+</tr>
+<tr>
+<td>:category</td>
+<td>分類</td>
+</tr>
+</tbody></table>
+<h3 id="當文章標題為中文時"><a href="#當文章標題為中文時" class="headerlink" title="當文章標題為中文時"></a>當文章標題為中文時</h3><p>當一篇名為 “利用 Hexo + GitHub 建立部落格 (二)” 的文章被建立時，<br>以我們在 <code>permalink: :year/:month/:day/:title/</code> 中的設定，文章網址應該是</p>
+<p><code>https://carol-yang.github.io/2019/08/21/利用 Hexo + GitHub 建立部落格 (二)/</code></p>
+<p>但是因為中文會被轉譯為十六進制編碼，因此實際網址會是 ( 請把網址複製到記事本試試 )</p>
+<p><code>https://carol-yang.github.io/2019/08/21/%E5%88%A9%E7%94%A8-Hexo-GitHub-%E5%BB%BA%E7%AB%8B%E9%83%A8%E8%90%BD%E6%A0%BC-%E4%BA%8C/</code></p>
+<p>除了不好看外，也會影響 SEO，這時候 permalink 與 permalink_defaults 設定就派上用場了</p>
+<h4 id="1-自訂義變數"><a href="#1-自訂義變數" class="headerlink" title="1. 自訂義變數"></a>1. 自訂義變數</h4><p>先自訂一個  <code>urlname</code> 作為我們放英文標題的變數，並在 <code>permalink_defaults</code> 內設置它的默認值</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:urlname/</span></span><br><span class="line"><span class="attr">permalink_defaults:</span></span><br><span class="line"><span class="attr">    urlname:</span>  <span class="string">index</span>                       <span class="comment"># index 隨便你寫，只是提醒自己這是什麼</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-在文章中加入變數"><a href="#2-在文章中加入變數" class="headerlink" title="2. 在文章中加入變數"></a>2. 在文章中加入變數</h4><p>在每篇文章的 Front-matter 區塊中，加入變數</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 利用 Hexo + GitHub 建立部落格 (二)</span><br><span class="line">urlname: Use-Hexo-&amp;-GitHub-create-a-blog-2</span><br><span class="line">date: 2019-08-21 12:00:00</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>＊ 注意<br>在 urlname 的內容，不要使用空白鍵及特殊符號，也會與中文一樣轉成代碼<br>每篇文章都要在 Front-matter 中加入 urlname，否則未寫 urlname 的文章，網址中的 <code>urlname</code> 區塊會顯示 undefined<br>例如：<br><code>https://carol-yang.github.io/2019/08/21/undefined/</code></p>
+</blockquote>
+<h4 id="3-修改後的網址"><a href="#3-修改後的網址" class="headerlink" title="3. 修改後的網址"></a>3. 修改後的網址</h4><p>  原本<br>  <code>https://carol-yang.github.io/2019/08/21/%E5%88%A9%E7%94%A8-Hexo-GitHub-%E5%BB%BA%E7%AB%8B%E9%83%A8%E8%90%BD%E6%A0%BC-%E4%BA%8C/</code></p>
+<p>  自定義變數後的網址<br>  <code>https://carol-yang.github.io/2019/08/21/Use-Hexo-&amp;-GitHub-create-a-blog-2/</code></p>
+<h2 id="二、分類與標籤設置"><a href="#二、分類與標籤設置" class="headerlink" title="二、分類與標籤設置"></a>二、分類與標籤設置</h2><p>除了文章內頁網址外，分類與標籤也同樣會因為中文轉為十六進制編碼的關係，造成同樣的問題</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Category &amp; Tag                    分類 &amp; 標籤</span></span><br><span class="line"><span class="attr">default_category:</span> <span class="string">uncategorized</span>     <span class="comment"># 默認分類</span></span><br><span class="line"><span class="attr">category_map:</span>                       <span class="comment"># 分類別名</span></span><br><span class="line"><span class="attr">tag_map:</span>                            <span class="comment"># 標籤別名</span></span><br></pre></td></tr></table></figure>
+
+<p>在開始做之前，我們先來說說 <code>default_category</code>，<code>default_category</code> 的意思是當你這篇文章沒有設定分類，<br>它就會自動把這篇文章加入到 <code>uncategorized</code> 這個分類中，當然 <code>uncategorized</code> 是可以改名稱的。</p>
+<p>例如：<br>當你在 <code>permalink</code> 加入了分類變數，想要文章內頁網址也包含分類名<br><code>permalink: :year/:month/:day/:category/:urlname/</code><br>但如果你某篇文章並沒有自己設定分類呢？<br>它就會放在默認分類中，預設的分類名 <code>uncategorized</code><br>所以文章網址就會呈現：<br><code>https://carol-yang.github.io/2019/08/21/uncategorized/Use-Hexo-&amp;-GitHub-create-a-blog-2/</code></p>
+<h3 id="開始設定標籤及分類的英文名"><a href="#開始設定標籤及分類的英文名" class="headerlink" title="開始設定標籤及分類的英文名"></a>開始設定標籤及分類的英文名</h3><p>現在我們開始，把中文的標籤及分類，更改成顯示是中文，網址是顯示英文吧!</p>
+<p>以分類為例：<br>設一個分類名為 “30 天 blog 挑戰”<br>當進入”30 天 blog 挑戰”分類頁面，因為中文的關係，網頁會呈現<br><code>https://carol-yang.github.io/categories/30-%E5%A4%A9-blog-%E6%8C%91%E6%88%B0/</code></p>
+<p>在 <code>category_map</code> 設定中，加入 <code>中文分類名: 英文分類名</code></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">category_map:</span></span><br><span class="line">  <span class="number">30</span><span class="bullet">-天-blog-挑戰:</span> <span class="number">30</span><span class="bullet">-days-challenge</span></span><br></pre></td></tr></table></figure>
+
+<p>設定好後，網址就會呈現<br><code>https://carol-yang.github.io/categories/30-days-challenge/</code></p>
+<p>標籤頁面也是同樣做法，修改 <code>tag_map</code></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">tag_map:</span></span><br><span class="line">  <span class="string">開始</span> <span class="string">Hello</span> <span class="attr">World:</span> <span class="string">begin</span></span><br></pre></td></tr></table></figure>
+
+<p>在”開始 Hello World”的標籤頁面網址就會呈現：<br><code>https://carol-yang.github.io/tags/begin/</code></p>
+<blockquote>
+<p>當分類與標籤原本就是英文時，就不需再另外設置了，因為原本就是英文嘛 &gt;&lt;</p>
+</blockquote>
+<h2 id="三、從資源目錄插入代碼"><a href="#三、從資源目錄插入代碼" class="headerlink" title="三、從資源目錄插入代碼"></a>三、從資源目錄插入代碼</h2><p>在 <code>_config.yml</code> 中我們可以看到</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">code_dir:</span> <span class="string">downloads/code</span>   <span class="comment"># downloads/code 是默認目錄，可自行修改</span></span><br></pre></td></tr></table></figure>
+
+<p>這個設置是 - 如果不想直接在文章內直接打代碼，可以將代碼存在 <code>source/downloads/code</code> 資料夾中，<br>先在資料夾內建立一個檔案，再到文章中寫入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% include_code [title] [lang:language] path/to/file %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>就可以引入</p>
+<p>例如：<br>我在 <code>source/downloads/code/</code> 中建立一個檔名為 <code>2019.08.21.test</code> 的 js 檔，<br>內容為 <code>(function () { console.log(&#39;a&#39;); });</code><br>在我要引入的文章中寫入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% include_code 2019.08.21.test lang:javascript 2019.08.21.test.js %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>結果會呈現以下內容：</p>
+<figure class="highlight javascript"><figcaption><span>2019.08.21.test</span><a href="/downloads/code/2019.08.21.test.js">view raw</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span> (<span class="params"></span>) </span>{</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'a'</span>);</span><br><span class="line">};</span><br></pre></td></tr></table></figure>
+
+<p>今天就先到這裡，明天來講講我自己在 <code>_config.yml</code> 中的設定 ~</p>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/30-天-blog-挑戰/" rel="tag"># 30 天 blog 挑戰</a>
+            
+              <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/08/20/Use-Hexo-&-GitHub-create-blog-2/" rel="next" title="利用 Hexo + GitHub 建立部落格 (二)">
+                  <i class="fa fa-chevron-left"></i> 利用 Hexo + GitHub 建立部落格 (二)
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc" data-target="post-toc-wrap">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+          本站概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc">
+            <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、文章連結設置"><span class="nav-text">一、文章連結設置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#變數"><span class="nav-text">變數</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#當文章標題為中文時"><span class="nav-text">當文章標題為中文時</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-自訂義變數"><span class="nav-text">1. 自訂義變數</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-在文章中加入變數"><span class="nav-text">2. 在文章中加入變數</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-修改後的網址"><span class="nav-text">3. 修改後的網址</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、分類與標籤設置"><span class="nav-text">二、分類與標籤設置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#開始設定標籤及分類的英文名"><span class="nav-text">開始設定標籤及分類的英文名</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、從資源目錄插入代碼"><span class="nav-text">三、從資源目錄插入代碼</span></a></li></ol></div>
+          </div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Carol Yang</p>
+  <div class="site-description motion-element" itemprop="description"></div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分類</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">標籤</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+        </div>
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Carol Yang</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 強力驅動 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主題 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.3.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  </div>
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
+<script src="/js/schemes/pisces.js?v=7.3.0"></script>
+<script src="/js/next-boot.js?v=7.3.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+  
+  <script src="/js/post-details.js?v=7.3.0"></script>
+
+
+</body>
+</html>
