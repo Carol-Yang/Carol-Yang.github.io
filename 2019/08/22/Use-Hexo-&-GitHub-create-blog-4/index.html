@@ -56,17 +56,17 @@
 
   <meta name="keywords" content="30 天 blog 挑戰,Hexo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="利用 Hexo + GitHub 建立部落格 (一)">
-<meta property="og:url" content="http://Carol-Yang.github.io/2019/08/19/Use-Hexo-&-GitHub-create-blog-1/index.html">
+<meta property="og:title" content="利用 Hexo + GitHub 建立部落格 (四)">
+<meta property="og:url" content="http://Carol-Yang.github.io/2019/08/22/Use-Hexo-&-GitHub-create-blog-4/index.html">
 <meta property="og:site_name" content="Carol murmur">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:image" content="http://carol-yang.github.io/2019/08/19/Use-Hexo-&-GitHub-create-blog-1/hexo-cover.png">
-<meta property="og:image" content="http://carol-yang.github.io/2019/08/19/Use-Hexo-&-GitHub-create-blog-1/folder-list.png">
-<meta property="og:updated_time" content="2019-08-21T07:16:15.364Z">
+<meta property="og:image" content="http://carol-yang.github.io/2019/08/22/Use-Hexo-&-GitHub-create-blog-4/hexo-config.png">
+<meta property="og:image" content="http://carol-yang.github.io/2019/08/22/Use-Hexo-&-GitHub-create-blog-4/repo.png">
+<meta property="og:updated_time" content="2019-08-22T03:02:29.273Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="利用 Hexo + GitHub 建立部落格 (一)">
-<meta name="twitter:image" content="http://carol-yang.github.io/2019/08/19/Use-Hexo-&-GitHub-create-blog-1/hexo-cover.png">
-  <link rel="canonical" href="http://Carol-Yang.github.io/2019/08/19/Use-Hexo-&-GitHub-create-blog-1/">
+<meta name="twitter:title" content="利用 Hexo + GitHub 建立部落格 (四)">
+<meta name="twitter:image" content="http://carol-yang.github.io/2019/08/22/Use-Hexo-&-GitHub-create-blog-4/hexo-config.png">
+  <link rel="canonical" href="http://Carol-Yang.github.io/2019/08/22/Use-Hexo-&-GitHub-create-blog-4/">
 
 
 <script id="page-configurations">
@@ -80,7 +80,7 @@
   };
 </script>
 
-  <title>利用 Hexo + GitHub 建立部落格 (一) | Carol murmur</title>
+  <title>利用 Hexo + GitHub 建立部落格 (四) | Carol murmur</title>
   <meta name="generator" content="Hexo 3.9.0">
   
 
@@ -225,7 +225,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://Carol-Yang.github.io/2019/08/19/Use-Hexo-&-GitHub-create-blog-1/">
+    <link itemprop="mainEntityOfPage" href="http://Carol-Yang.github.io/2019/08/22/Use-Hexo-&-GitHub-create-blog-4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Carol Yang">
@@ -237,7 +237,7 @@
       <meta itemprop="name" content="Carol murmur">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">利用 Hexo + GitHub 建立部落格 (一)
+        <h1 class="post-title" itemprop="name headline">利用 Hexo + GitHub 建立部落格 (四)
 
           
         </h1>
@@ -253,20 +253,8 @@
                 
               
 
-              <time title="創建時間：2019-08-19 20:20:38" itemprop="dateCreated datePublished" datetime="2019-08-19T20:20:38+08:00">2019-08-19</time>
+              <time title="創建時間：2019-08-22 11:02:29" itemprop="dateCreated datePublished" datetime="2019-08-22T11:02:29+08:00">2019-08-22</time>
             </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2019-08-21 15:16:15" itemprop="dateModified" datetime="2019-08-21T15:16:15+08:00">2019-08-21</time>
-              </span>
-            
           
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -293,45 +281,47 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <img src="/2019/08/19/Use-Hexo-&-GitHub-create-blog-1/hexo-cover.png" title="hexo-cover">
+        <img src="/2019/08/22/Use-Hexo-&-GitHub-create-blog-4/hexo-config.png" title="hexo-config">
 
 <a id="more"></a>
 
+<p>說完了在 <code>_config.yml</code> 的配置介紹，今天來說說我的 <code>_config.yml</code> 配置，</p>
+<blockquote>
+<p>主題也會有另外的 <code>_config.yml</code> 需要設置，改天再另外說明</p>
+</blockquote>
+<p>以下內容並未把全部都貼上，只貼上有更改的</p>
+<h2 id="網站介紹"><a href="#網站介紹" class="headerlink" title="網站介紹"></a>網站介紹</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">Carol</span> <span class="string">murmur</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">Carol</span> <span class="string">murmur</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">Carol</span> <span class="string">murmur</span></span><br><span class="line"><span class="attr">keywords:</span> <span class="string">Carol</span> <span class="string">murmur,</span> <span class="string">學習</span> <span class="string">blog</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">Carol</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-TW</span></span><br></pre></td></tr></table></figure>
 
-<p>雖然我是手寫筆記派，但是寫 blog 與 自己在紙本的筆記，還是有很大的不同，<br>紙本筆記比較像條列式寫下重點，而寫 blog 比較像是自己與自己的對話。</p>
-<p>前陣子使用過 Medium 但覺得寫文章有諸多限制，最終決定使用 Hexo 作為我寫 blog 的地方。</p>
-<p>話不多說，第一篇 blog 就從建立 blog 的過程開始吧!</p>
-<p>這次使用 Hexo + GitHub 建立部落格，並使用 Next 主題。</p>
-<h2 id="在開始之前"><a href="#在開始之前" class="headerlink" title="在開始之前"></a>在開始之前</h2><p>在安裝 Hexo 之前，電腦中需先安裝：</p>
+<p>中文語言可使用 <code>language: zh-tw</code>， 而在這裡我設置 <code>language: zh-TW</code> 是依照 <code>next 主題</code> 所設定，<br>語言可在 <code>themes/next/languages/</code> 資料夾內查找</p>
+<blockquote>
+<p>注意：<br>語言設置的大小寫很重要</p>
+</blockquote>
+<h2 id="網站網址"><a href="#網站網址" class="headerlink" title="網站網址"></a>網站網址</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="attr">url:</span> <span class="attr">http://carolblog.github.io</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:urlname/</span></span><br><span class="line"><span class="attr">permalink_defaults:</span></span><br><span class="line"><span class="attr">  urlname:</span> <span class="string">index</span></span><br></pre></td></tr></table></figure>
+
+<p>因為我是使用 GitHub 來放置我的 blog，所以在網站網址先寫入 <code>http://帳號名稱.github.io</code></p>
+<p>關於 <code>permalink</code> 及 <code>permalink_defaults:</code> 設定，詳細可看 <a href="https://carol-yang.github.io/2019/08/21/Use-Hexo-&-GitHub-create-blog-3/">利用 Hexo + GitHub 建立部落格 (三)</a></p>
+<h2 id="寫作"><a href="#寫作" class="headerlink" title="寫作"></a>寫作</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Writing</span></span><br><span class="line"><span class="attr">new_post_name:</span> <span class="string">:year-:month-:day-:title.md</span></span><br><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>在寫作方面</p>
 <ul>
-<li><a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a> 版本需在 6.9以上</li>
-<li><a href="https://git-scm.com/" target="_blank" rel="noopener">Git</a></li>
+<li>使用 <code>:year-:month-:day-:title.md</code> 來做文章檔名，例如：<br><code>2019-08-19-利用-Hexo-GitHub-建立部落格-一.md</code></li>
+<li>設置 <code>post_asset_folder: true</code> ，在創建文章的同時，建立一個與文章同名的資料夾，這個資料夾可用來放置這篇文章的圖片與相關資料</li>
 </ul>
-<p><a href="https://hexo.io/zh-tw/index.html" target="_blank" rel="noopener">Hexo 官方網站</a> 也提供了詳細的教學，建議去看。</p>
-<h2 id="開始安裝-Hexo"><a href="#開始安裝-Hexo" class="headerlink" title="開始安裝 Hexo"></a>開始安裝 Hexo</h2><p>在電腦中安裝 Hexo (全局安裝)<br>輸入以下指令</p>
-<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install -g hexo-cli</span></span><br></pre></td></tr></table></figure>
+<h2 id="部屬"><a href="#部屬" class="headerlink" title="部屬"></a>部屬</h2><p>在 <code>_config.yml</code> 裡，部屬設定非常重要!</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">  type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">  repository:</span> <span class="string">git@github.com:carolblog/carolblog.github.io.git</span></span><br><span class="line"><span class="attr">  branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="利用-Hexo-建立你的-blog"><a href="#利用-Hexo-建立你的-blog" class="headerlink" title="利用 Hexo 建立你的 blog"></a>利用 Hexo 建立你的 blog</h2><p>安裝完 Hexo 後，接下來就是建立自己的 blog 了~</p>
-<ol>
-<li><p>初始化 blog</p>
-<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo init carolblog</span></span><br><span class="line">// carolbog 為自己的部落格名，可自行修改</span><br></pre></td></tr></table></figure>
-
-<p>輸入後，會建立一個以 carolblog 為名的資料夾</p>
-</li>
-<li><p>進入 blog 資料夾</p>
-<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> carolbog</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>安裝相關套件</p>
-<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h2 id="Hexo-目錄結構"><a href="#Hexo-目錄結構" class="headerlink" title="Hexo 目錄結構"></a>Hexo 目錄結構</h2><img src="/2019/08/19/Use-Hexo-&-GitHub-create-blog-1/folder-list.png" title="folder-list">
-<center>carolblog 的資料夾列表</center>
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">| - source                 <span class="comment">// 存放原始資料</span></span><br><span class="line">  | - _drafts                 <span class="comment">// 草稿資料夾</span></span><br><span class="line">  | - _posts                  <span class="comment">// 已發佈的文章資料夾</span></span><br><span class="line">  | - about                   <span class="comment">// 關於我資料夾</span></span><br><span class="line">  | - tags                    <span class="comment">// 標籤資料夾</span></span><br><span class="line">  | - categories              <span class="comment">// 分類資料夾</span></span><br><span class="line">| - themes                 <span class="comment">// 主題資料夾</span></span><br><span class="line">| - scaffords              <span class="comment">// 鷹架資料夾</span></span><br><span class="line">| - _config.yml            <span class="comment">// hexo blog 全局配置文件</span></span><br><span class="line">| - package.json           <span class="comment">// hexo 版本及相關安裝套件資訊</span></span><br><span class="line">| - package-lock.json      <span class="comment">// 記錄當前狀態下實際安裝的套件來源與版本號</span></span><br><span class="line">| - node_modules           <span class="comment">// 放置安裝後的相關套件</span></span><br><span class="line">| - .gitgnore              <span class="comment">// 設定不被 git 記錄的文件</span></span><br><span class="line">| - public                 <span class="comment">// 使用 $ hexo g 後會產生的靜態網頁資料夾</span></span><br><span class="line">| - db.json                <span class="comment">// 使用 $ hexo g 後會產生的緩存文件</span></span><br><span class="line">| - .deploy_git            <span class="comment">// 使用 $ hexo d 後會產生的歷史資料夾</span></span><br></pre></td></tr></table></figure>
-
-<p>最原始的 Hexo 就建好了，是不是特別簡單!</p>
+<blockquote>
+<p><code>repository</code> 及 <code>branch</code> 需自行寫上，預設並沒有</p>
+</blockquote>
+<ul>
+<li>使用 GitHub 來建立 blog，所以 <code>type: git</code></li>
+<li>在 GitHub 中創建 repo 時會給儲存庫網址，而我是使用 SSH keys，所以寫入<br><code>repository: git@github.com:carolblog/carolblog.github.io.git</code></li>
+</ul>
+<p><img src="repo.png" alt="repo"></p>
+<ul>
+<li>分支上，設定 <code>branch: master</code> ，自訂名稱也可，但我習慣使用預設名稱</li>
+</ul>
+<p>在設定好 Hexo 的 <code>config.yml</code> 檔案後，終於要開始說與寫作相關的東西了 ~</p>
 
     </div>
 
@@ -359,8 +349,8 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2019/08/18/30-days-challenge/" rel="next" title="30天 blog 挑戰">
-                  <i class="fa fa-chevron-left"></i> 30天 blog 挑戰
+                <a href="/2019/08/21/Use-Hexo-&-GitHub-create-blog-3/" rel="next" title="利用 Hexo + GitHub 建立部落格 (三)">
+                  <i class="fa fa-chevron-left"></i> 利用 Hexo + GitHub 建立部落格 (三)
                 </a>
               
             </div>
@@ -368,10 +358,6 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2019/08/20/Use-Hexo-&-GitHub-create-blog-2/" rel="prev" title="利用 Hexo + GitHub 建立部落格 (二)">
-                  利用 Hexo + GitHub 建立部落格 (二) <i class="fa fa-chevron-right"></i>
-                </a>
               
             </div>
           </div>
@@ -421,7 +407,7 @@
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
           <div class="post-toc">
-            <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#在開始之前"><span class="nav-text">在開始之前</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#開始安裝-Hexo"><span class="nav-text">開始安裝 Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利用-Hexo-建立你的-blog"><span class="nav-text">利用 Hexo 建立你的 blog</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo-目錄結構"><span class="nav-text">Hexo 目錄結構</span></a></li></ol></div>
+            <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#網站介紹"><span class="nav-text">網站介紹</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#網站網址"><span class="nav-text">網站網址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#寫作"><span class="nav-text">寫作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部屬"><span class="nav-text">部屬</span></a></li></ol></div>
           </div>
         
       </div>
