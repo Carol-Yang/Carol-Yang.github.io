@@ -62,7 +62,7 @@
 <meta property="og:locale" content="zh-TW">
 <meta property="og:image" content="http://carol-yang.github.io/2019/08/23/Use-Hexo-&-GitHub-create-blog-5/hexo-writing.png">
 <meta property="og:image" content="http://carol-yang.github.io/2019/08/23/Use-Hexo-&-GitHub-create-blog-5/hexo-new.png">
-<meta property="og:updated_time" content="2019-08-23T10:41:42.564Z">
+<meta property="og:updated_time" content="2019-08-23T10:52:36.988Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="利用 Hexo + GitHub 建立部落格 (五) - 建立文章">
 <meta name="twitter:image" content="http://carol-yang.github.io/2019/08/23/Use-Hexo-&-GitHub-create-blog-5/hexo-writing.png">
@@ -253,7 +253,7 @@
                 
               
 
-              <time title="創建時間：2019-08-23 18:38:35 / 修改時間：18:41:42" itemprop="dateCreated datePublished" datetime="2019-08-23T18:38:35+08:00">2019-08-23</time>
+              <time title="創建時間：2019-08-23 18:38:35 / 修改時間：18:52:36" itemprop="dateCreated datePublished" datetime="2019-08-23T18:38:35+08:00">2019-08-23</time>
             </span>
           
             
@@ -293,15 +293,15 @@
 <h2 id="建立文章"><a href="#建立文章" class="headerlink" title="建立文章"></a>建立文章</h2><p>可使用以下指令創建文章</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo <span class="keyword">new</span> 文章類型 <span class="string">"檔名"</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="文章類型"><a href="#文章類型" class="headerlink" title="文章類型"></a>文章類型</h2><ul>
-<li><strong><code>post</code></strong> ： <ul>
+<h2 id="文章類型"><a href="#文章類型" class="headerlink" title="文章類型"></a>文章類型</h2><h3 id="post"><a href="#post" class="headerlink" title="post"></a><code>post</code></h3><ul>
 <li>一般文章，會在 <code>soruce/_posts</code> 資料夾，建立 <code>文章名.md</code> 的檔案</li>
 <li>文章名可在 <code>config.yml</code> 中的 <code>new_post_name</code>，另做設定</li>
 <li>例如 ：<br><code>config.yml</code> 中設定 <code>new_post_name: :year-:month-:day-:title.md</code>，<br>輸入指令 <code>$ hexo new post &quot;第一篇文章&quot;</code>，會在 <code>soruce/_posts</code> 資料夾建立<br><code>2019-08-23-第一篇文章.md</code> 檔案<br>
-<br></li>
-</ul>
+<br>
+
 </li>
-<li><strong><code>draft</code></strong> ：<ul>
+</ul>
+<h3 id="draft"><a href="#draft" class="headerlink" title="draft"></a><code>draft</code></h3><ul>
 <li>草稿文章，會在 <code>soruce/_draft</code> 資料夾，建立 <code>文章名.md</code> 的檔案</li>
 <li>例如： <code>$ hexo new draft &quot;第一篇草稿&quot;</code></li>
 <li>可利用 <code>$ hexo publish draft &quot;草稿文章名&quot;</code> 把草稿發布為一般文章，<br>此時會轉為 - <code>config.yml</code> 中設定 <code>new_post_name</code> 的檔名</li>
@@ -311,43 +311,42 @@
 
 </li>
 </ul>
-</li>
-</ul>
 <blockquote>
 <p>可在 <code>config.yml</code> 中設定 <code>post_asset_folder: true</code>，<br>在創建 <code>一般文章</code> 及 <code>草稿文章</code> 的同時生成同名資料夾，可用來存放此篇文章的圖片或相關檔案<br>當草稿使用 <code>$ hexo publish &quot;草稿文章名&quot;</code> 指令轉為一般文章時，此同名資料夾也會同時移動至 <code>_post 資料夾</code></p>
 </blockquote>
 <br>
 
-<ul>
-<li><strong><code>page</code></strong> ：<ul>
-<li>不出現在首頁中，通常用來建立 <code>關於我</code> 、 <code>分類</code> 及 <code>標籤</code> 頁面<br></li>
-<li><strong>關於我 頁面：</strong><ul>
+<h3 id="page"><a href="#page" class="headerlink" title="page"></a><code>page</code></h3><ul>
+<li><p>不出現在首頁中，通常用來建立 <code>關於我</code> 、 <code>分類</code> 及 <code>標籤</code> 頁面</p>
+</li>
+<li><h4 id="關於我-頁面"><a href="#關於我-頁面" class="headerlink" title="關於我 頁面"></a>關於我 頁面</h4><ul>
 <li>使用 <code>$ hexo new page &quot;about&quot;</code> 指令，建立關於我頁面</li>
 <li>會在 <code>soruce 資料夾</code> 內建立 <code>about 資料夾</code>，並在此建立 <code>index.md</code> 檔案<br>
-<br></li>
+<br>
+</li>
 </ul>
 </li>
-<li><strong>分類 頁面 ：</strong><ul>
+<li><h4 id="分類-頁面"><a href="#分類-頁面" class="headerlink" title="分類 頁面"></a>分類 頁面</h4><ul>
 <li>使用 <code>$ hexo new page &quot;categories&quot;</code> 指令，建立分類頁面</li>
 <li>會在 <code>soruce 資料夾</code> 內建立 <code>categories 資料夾</code>，並在此建立 <code>index.md</code> 檔案<br>
-<br></li>
+<br>
+</li>
 </ul>
 </li>
-<li><strong>標籤 頁面 ：</strong><ul>
+<li><h4 id="標籤-頁面"><a href="#標籤-頁面" class="headerlink" title="標籤 頁面"></a>標籤 頁面</h4><ul>
 <li>使用 <code>$ hexo new page &quot;tags&quot;</code> 指令，建立標籤頁面</li>
 <li>會在 <code>soruce 資料夾</code> 內建立 <code>tags 資料夾</code>，並在此建立 <code>index.md</code> 檔案</li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
 <br>
 
-<p><img src="hexo-new.png" alt="hexo-new"></p>
 <center>呈現的目錄</center>
 
-<p>更多創建文章相關可看 <a href="https://hexo.io/zh-tw/docs/writing.html" target="_blank" rel="noopener">Hexo 官網 - 寫作</a></p>
+<p><img src="hexo-new.png" alt="hexo-new"></p>
 <br>
+
+<p>更多創建文章相關可看 <a href="https://hexo.io/zh-tw/docs/writing.html" target="_blank" rel="noopener">Hexo 官網 - 寫作</a></p>
 <br>
 
 <blockquote>
@@ -445,7 +444,7 @@
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
           <div class="post-toc">
-            <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#建立文章"><span class="nav-text">建立文章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章類型"><span class="nav-text">文章類型</span></a></li></ol></div>
+            <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#建立文章"><span class="nav-text">建立文章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章類型"><span class="nav-text">文章類型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#post"><span class="nav-text">post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#draft"><span class="nav-text">draft</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#page"><span class="nav-text">page</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#關於我-頁面"><span class="nav-text">關於我 頁面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分類-頁面"><span class="nav-text">分類 頁面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#標籤-頁面"><span class="nav-text">標籤 頁面</span></a></li></ol></li></ol></li></ol></div>
           </div>
         
       </div>
