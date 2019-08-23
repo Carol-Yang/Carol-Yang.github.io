@@ -62,7 +62,7 @@
 <meta property="og:locale" content="zh-TW">
 <meta property="og:image" content="http://carol-yang.github.io/2019/08/23/Use-Hexo-&-GitHub-create-blog-5/hexo-writing.png">
 <meta property="og:image" content="http://carol-yang.github.io/2019/08/23/Use-Hexo-&-GitHub-create-blog-5/hexo-new.png">
-<meta property="og:updated_time" content="2019-08-23T10:52:36.988Z">
+<meta property="og:updated_time" content="2019-08-23T11:24:47.329Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="利用 Hexo + GitHub 建立部落格 (五) - 建立文章">
 <meta name="twitter:image" content="http://carol-yang.github.io/2019/08/23/Use-Hexo-&-GitHub-create-blog-5/hexo-writing.png">
@@ -253,7 +253,7 @@
                 
               
 
-              <time title="創建時間：2019-08-23 18:38:35 / 修改時間：18:52:36" itemprop="dateCreated datePublished" datetime="2019-08-23T18:38:35+08:00">2019-08-23</time>
+              <time title="創建時間：2019-08-23 18:38:35 / 修改時間：19:24:47" itemprop="dateCreated datePublished" datetime="2019-08-23T18:38:35+08:00">2019-08-23</time>
             </span>
           
             
@@ -294,20 +294,34 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo <span class="keyword">new</span> 文章類型 <span class="string">"檔名"</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="文章類型"><a href="#文章類型" class="headerlink" title="文章類型"></a>文章類型</h2><h3 id="post"><a href="#post" class="headerlink" title="post"></a><code>post</code></h3><ul>
-<li>一般文章，會在 <code>soruce/_posts</code> 資料夾，建立 <code>文章名.md</code> 的檔案</li>
-<li>文章名可在 <code>config.yml</code> 中的 <code>new_post_name</code>，另做設定</li>
-<li>例如 ：<br><code>config.yml</code> 中設定 <code>new_post_name: :year-:month-:day-:title.md</code>，<br>輸入指令 <code>$ hexo new post &quot;第一篇文章&quot;</code>，會在 <code>soruce/_posts</code> 資料夾建立<br><code>2019-08-23-第一篇文章.md</code> 檔案<br>
-<br>
+<li><p>一般文章，會在 <code>soruce/_posts</code> 資料夾，建立 <code>文章名.md</code> 的檔案</p>
+</li>
+<li><p>文章名可在 <code>config.yml</code> 中的 <code>new_post_name</code>，另做設定</p>
+</li>
+<li><p>例如 ：<br><code>config.yml</code> 中設定 <code>new_post_name: :year-:month-:day-:title.md</code>，輸入指令</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo <span class="keyword">new</span> post <span class="string">"第一篇文章"</span></span><br></pre></td></tr></table></figure>
 
+<p>，會在 <code>soruce/_posts</code> 資料夾建立 <code>2019-08-23-第一篇文章.md</code> 檔案</p>
 </li>
 </ul>
 <h3 id="draft"><a href="#draft" class="headerlink" title="draft"></a><code>draft</code></h3><ul>
-<li>草稿文章，會在 <code>soruce/_draft</code> 資料夾，建立 <code>文章名.md</code> 的檔案</li>
-<li>例如： <code>$ hexo new draft &quot;第一篇草稿&quot;</code></li>
-<li>可利用 <code>$ hexo publish draft &quot;草稿文章名&quot;</code> 把草稿發布為一般文章，<br>此時會轉為 - <code>config.yml</code> 中設定 <code>new_post_name</code> 的檔名</li>
-<li>一般預設 <code>$ hexo server</code> 並不會顯示草稿，可使用 <code>$ hexo server --draft</code> 開啟伺服器瀏覽</li>
-<li>可在 <code>config.yml</code> 設定 <code>render_drafts: true</code>，強制顯示草稿<br>
-<br>
+<li><p>草稿文章，會在 <code>soruce/_draft</code> 資料夾，建立 <code>文章名.md</code> 的檔案</p>
+</li>
+<li><p>例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo <span class="keyword">new</span> draft <span class="string">"第一篇草稿"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>把草稿發布為一般文章，使用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo publish draft <span class="string">"草稿文章名"</span></span><br></pre></td></tr></table></figure>
+
+<p>此時會轉為 - <code>config.yml</code> 中設定 <code>new_post_name</code> 的檔名</p>
+</li>
+<li><p>一般預設 <code>$ hexo server</code> 並不會顯示草稿，可使用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server --draft</span><br></pre></td></tr></table></figure>
+
+<p>開啟伺服器瀏覽(包含草稿)</p>
+</li>
+<li><p>可在 <code>config.yml</code> 設定 <code>render_drafts: true</code>，強制顯示草稿</p>
+<br> 
 
 </li>
 </ul>
@@ -320,22 +334,27 @@
 <li><p>不出現在首頁中，通常用來建立 <code>關於我</code> 、 <code>分類</code> 及 <code>標籤</code> 頁面</p>
 </li>
 <li><h4 id="關於我-頁面"><a href="#關於我-頁面" class="headerlink" title="關於我 頁面"></a>關於我 頁面</h4><ul>
-<li>使用 <code>$ hexo new page &quot;about&quot;</code> 指令，建立關於我頁面</li>
-<li>會在 <code>soruce 資料夾</code> 內建立 <code>about 資料夾</code>，並在此建立 <code>index.md</code> 檔案<br>
-<br>
+<li><p>使用指令，建立關於我頁面</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo <span class="keyword">new</span> page <span class="string">"about"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>會在 <code>soruce 資料夾</code> 內建立 <code>about 資料夾</code>，並在此建立 <code>index.md</code> 檔案</p>
 </li>
 </ul>
 </li>
 <li><h4 id="分類-頁面"><a href="#分類-頁面" class="headerlink" title="分類 頁面"></a>分類 頁面</h4><ul>
-<li>使用 <code>$ hexo new page &quot;categories&quot;</code> 指令，建立分類頁面</li>
-<li>會在 <code>soruce 資料夾</code> 內建立 <code>categories 資料夾</code>，並在此建立 <code>index.md</code> 檔案<br>
-<br>
+<li><p>使用指令，建立分類頁面</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo <span class="keyword">new</span> page <span class="string">"categories"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>會在 <code>soruce 資料夾</code> 內建立 <code>categories 資料夾</code>，並在此建立 <code>index.md</code> 檔案</p>
 </li>
 </ul>
 </li>
 <li><h4 id="標籤-頁面"><a href="#標籤-頁面" class="headerlink" title="標籤 頁面"></a>標籤 頁面</h4><ul>
-<li>使用 <code>$ hexo new page &quot;tags&quot;</code> 指令，建立標籤頁面</li>
-<li>會在 <code>soruce 資料夾</code> 內建立 <code>tags 資料夾</code>，並在此建立 <code>index.md</code> 檔案</li>
+<li><p>使用指令，建立標籤頁面</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo <span class="keyword">new</span> page <span class="string">"tags"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>會在 <code>soruce 資料夾</code> 內建立 <code>tags 資料夾</code>，並在此建立 <code>index.md</code> 檔案</p>
+</li>
 </ul>
 </li>
 </ul>
